@@ -1,0 +1,258 @@
+.card {
+  width: 420px;
+  height: 370px;
+  background: #333348;
+  border-radius: 40px;
+  box-sizing: border-box;
+  padding: 75px 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .user {
+    &__info {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+      color: #EEEEEE;
+    }
+
+    &__btn {
+      display: inline-block;
+      background: #52519D;
+      border-radius: 40px;
+      box-sizing: border-box;
+      padding: 20px 44px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+      color: #EEEEEE;
+      margin-top: 30px;
+
+    }
+  }
+
+  &small {
+    width: 270px;
+    height: 265px;
+    background: #333348;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 44px 37px;
+
+    .user {
+      &__info {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: #EEEEEE;
+
+      }
+
+      &__btn {
+        display: inline-block;
+        background: #52519D;
+        border-radius: 40px;
+        box-sizing: border-box;
+        padding: 16px 38px;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: #EEEEEE;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1470px) {
+  .card {
+    &small {
+      width: 420px;
+      height: 370px;
+      box-sizing: border-box;
+      padding: 75px 80px;
+
+      .user {
+        &__info {
+          font-size: 24px;
+          line-height: 30px;
+
+        }
+
+        &__btn {
+          box-sizing: border-box;
+          padding: 20px 44px;
+          cursor: pointer;
+          font-size: 24px;
+          line-height: 30px;
+          color: #EEEEEE;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 270px;
+    height: 265px;
+    padding: 44px 37px;
+
+    .user {
+      &__info {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+
+      }
+
+      &__btn {
+        padding: 16px 38px;
+        font-size: 18px;
+        line-height: 23px;
+        margin-top: 30px;
+      }
+    }
+
+    &small {
+      width: 270px;
+      height: 265px;
+      padding: 44px 37px;
+
+      .user {
+        &__info {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 23px;
+          color: #EEEEEE;
+
+        }
+
+        &__btn {
+          padding: 16px 38px;
+          font-size: 18px;
+          line-height: 23px;
+          color: #EEEEEE;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 200px;
+    height: 200px;
+    padding: 40px 15px;
+
+    .user {
+      &__info {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        line-height: 23px;
+
+      }
+
+      &__btn {
+        box-sizing: border-box;
+        padding: 8px 7px;
+        font-size: 14px;
+        line-height: 23px;
+        margin-top: 10px;
+      }
+    }
+
+    &small {
+      width: 200px;
+      height: 200px;
+      background: #333348;
+      margin: 0 auto;
+      padding: 40px 15px;
+
+      .user {
+        &__info {
+          font-weight: 400;
+          font-size: 14px;
+          text-align: center;
+          line-height: 23px;
+          color: #EEEEEE;
+
+        }
+
+        &__btn {
+          padding: 8px 7px;
+          font-size: 14px;
+          line-height: 23px;
+          color: #EEEEEE;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 150px;
+    height: 200px;
+    padding: 20px 10px;
+
+    .user {
+      &__info {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        line-height: 23px;
+        width: 100%;
+        word-wrap: break-word;
+
+      }
+
+      &__btn {
+        box-sizing: border-box;
+        padding: 8px 7px;
+        font-size: 14px;
+        line-height: 23px;
+        margin-top: 10px;
+      }
+    }
+
+    &small {
+      width: 150px;
+      height: 200px;
+      margin: 0 auto;
+      padding: 20px 10px;
+
+      .user {
+        &__info {
+          font-weight: 400;
+          font-size: 14px;
+          text-align: center;
+          line-height: 23px;
+          color: #EEEEEE;
+          width: 100%;
+          word-wrap: break-word;
+
+        }
+
+        &__btn {
+          padding: 8px 7px;
+          font-size: 14px;
+          line-height: 23px;
+          color: #EEEEEE;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
