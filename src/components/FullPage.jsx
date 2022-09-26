@@ -1,16 +1,30 @@
 import styles from "../styles/FullPage.module.scss"
 import SliderCard from "./SliderCards";
 import Articles from "./Articles";
-import {useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 
 import prev from "../images/arrow_prev.svg"
 import next from "../images/arrow_next.svg"
+import axios from "axios";
 
 export default function FullPage() {
     const [articlesByUserId, setArticlesByUserId] = useState(0);
     const [searchKeyword, setSearchKeyword] = useState('');
     const [users, setUsers] = useState([]);
     const [slider, setSlider] = useState(false);
+
+
+    useEffect(()=>{
+        axios.get("https://jsonplaceholder.typicode.com/users").then((resp) =>{
+            const allUsers = resp.data
+            setUsers(allUsers)
+        })
+    },[])
+
+    const search = (users, query ) => {
+        return users.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()))
+    }
+
 
     let contentSliderClass = articlesByUserId > 0 ? styles.sliderArticles : styles.slider;
 
@@ -25,7 +39,7 @@ export default function FullPage() {
             </div>
             <div className={styles.content}>
                 <div className={contentSliderClass}>
-                    <SliderCard search={searchKeyword} setSlider={setSlider} userId={articlesByUserId}
+                    <SliderCard users={search(users, searchKeyword)} setSlider={setSlider} userId={articlesByUserId}
                                 setUserId={setArticlesByUserId}/>
                 </div>
                 <Articles userId={articlesByUserId}/>

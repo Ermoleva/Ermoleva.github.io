@@ -6,9 +6,11 @@ import Slider from "react-slick";
 import CardUser from "./CardUser";
 import styles from "../styles/SliderCards.module.scss"
 
+
+
 export default class MultipleRows extends Component {
     state = {
-        users: [],
+        users: this.props.users,
         search: this.props.search
     }
 
@@ -22,16 +24,18 @@ export default class MultipleRows extends Component {
     // }
 
 
-    componentDidMount() {
-        axios.get("https://jsonplaceholder.typicode.com/users")
-            .then((response) => {
-                const users = response.data;
-                this.setState({users})
-            })
-    }
+    // componentDidMount() {
+    //     axios.get("https://jsonplaceholder.typicode.com/users")
+    //         .then((response) => {
+    //             const users = response.data;
+    //             this.setState({users})
+    //         })
+    // }
 
 
     render() {
+        console.log(this.props.users)
+
         const settings = {
             infinite: true,
             slidesToShow: 1,
@@ -46,7 +50,7 @@ export default class MultipleRows extends Component {
         return (
 
             <Slider ref={slider => (this.props.setSlider(slider))} {...settings}>
-                {this.state.users.map((data, index) => {
+                {this.props.users.map((data, index) => {
                     return (
                         <div key={index} className={styles.card_wrapper}>
                             <CardUser
